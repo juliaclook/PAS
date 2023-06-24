@@ -1,43 +1,23 @@
-Program Pzim ;
-{Elabore um programa que receba dois números inteiros e mostre para o usuário um menu com opções:
-1- Soma
-2- Subtração
-3- Divisão
-4- Multiplicação}
+Program EXQUATRO ;
+{Faça um programa que carregue uma matriz 2 x 2 com números reais, calcule e
+imprima a soma dos elementos da diagonal principal.}
 var
-n1,n2: integer;
-res: real;
-opcao: char;
+matriz: array [1..2,1..2] of real;
+i,j: integer;
+soma: real;
 Begin
-	writeln ('Digite dois números: ');
-	read (n1,n2);
-	writeln ('Escolha uma das opções: ');
-	writeln ('A - Adição');
-	writeln ('S - Subtração');
-	writeln ('D - Divisão');
-	writeln ('M - Multiplicação');
-	read (opcao);
-	if (upCase(opcao) = 'A')then
+	soma:= 0;
+	for i:= 1 to 2 do 
 	begin
-		res:= n1 + n2;
-		writeln (n1:6:2,' + ',n2:6:2,' = ',res:6:2);
-	end
-	else
-		if (upCase(opcao) = 'S') then
+		for j:= 1 to 2 do 
 		begin
-			res:= n1 - n2;
-			writeln (n1:6:2,' - ',n2:6:2,' = ',res:6:2);
-		end
-		else
-			if (upCase(opcao) = 'D') then
-			begin
-				res:= n1 / n2;
-				write (n1:6:2,' / ',n2:6:2,' = ',res:6:2);
-			end
-			else
-			begin
-				res:= n1 * n2;
-				writeln (n1:6:2,' * ',n2:6:2,' = ',res:6:2);
-			end;
-		readkey
+			writeln ('Digite o valor da linha ',i,' e coluna ',j);
+			read (matriz[i,j]);
+			if (i=j) then
+			soma:= soma + matriz [i,j];
+			clrscr;
+		end;
+	end;
+	writeln ('A soma dos elementos da diagonal principal é ',soma:6:2);
+	readkey;  
 End.

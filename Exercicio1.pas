@@ -1,17 +1,21 @@
-Program Pzim ;
-{Faça um programa que leia dois valores inteiros e informe qual o maior}
+Program EXUM ;
+{Faça um programa que carregue uma matriz 4 x 2 e mostre a soma de todos os
+elementos da matriz.}
 var
-n1,n2: integer;
+matriz: array [1..4,1..2] of integer;
+i,j,soma: integer;
 Begin
-	writeln ('Digite dois números: ');
-	read (n1,n2);
-	if (n1 > n2) then
-	write (n1:6:2,' é maior que', n2:6:2)
-	else
-		if (n1 < n2) then
-		write (n1:6:2,' é menor que ',n2:6:2)
-	else
-		if (n1 = n2) then
-		write ('Os dois números são iguais');
-	readkey
+	soma:= 0;
+	for i:= 1 to 4 do
+	begin
+		for j:= 1 to 2 do
+		begin
+			writeln('Digite o valor da linha ',i,' e coluna ',j);
+			read (matriz[i,j]);
+			soma:= soma + matriz [i,j];
+			clrscr;
+		end;
+	end;
+	writeln ('A soma de todos os elementos da matriz é ',soma);
+	readkey; 
 End.

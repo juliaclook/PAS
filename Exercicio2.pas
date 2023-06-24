@@ -1,20 +1,21 @@
-Program Pzim ;
-{Faça um programa que leia o nome e a idade de duas pessoas, e informe o nome e a idade da mais velha}
+Program EXDOIS ;
+{Faça um programa que carregue uma matriz 3 x 3 com números inteiros e imprima o
+maior elemento dessa matriz.}
 var
-idade1,idade2: integer;
-nome1,nome2: string;
+matriz: array [1..3,1..3] of integer;
+i,j,maiorE: integer;
 Begin
-	writeln ('Digite o nome e a idade da primeira pessoa: ');
-	read (nome1,idade1);
-	writeln ('Digite o nome e a idade da segunda pessoa: ');
-	read (nome2,idade2);
-	if (idade1 > idade2) then
-		writeln ('O nome da pessoa mais velha é ',nome1,' e essa pessoa tem ',idade1,' anos')
-	else
-		if (idade2 > idade1) then
-			writeln ('O nome da pessoa mais velha é ',nome2,' e essa pessoa tem ',idade2,' anos')
-	else
-		if (idade1 = idade2) then
-			write ('As duas pessoas tem a mesma idade');
-	readkey
+	maiorE:= -9999;
+	for i:= 1 to 3 do
+	begin
+		for j:= 1 to 3 do
+		begin
+			writeln ('Digite o valor da linha ',i,' e coluna ',j);
+			read (matriz[i,j]);
+			if (matriz[i,j] > maiorE) then
+				maiorE:= matriz[i,j];
+		end;
+	end;
+	writeln ('O maior valor é ',maiorE);
+	readkey;  
 End.
