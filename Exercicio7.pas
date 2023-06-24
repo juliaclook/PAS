@@ -1,20 +1,23 @@
-Program Pzim ;
+Program EXSETE ;
+{A empresa RH+ necessita de um software que gere uma lista com o nome do
+funcionário e seu respectivo salário ao final do cadastro deles. Para isso
+desenvolva um software que leia os nomes de 15 funcionários e os seus
+respectivos salários e os armazene em dois vetores diferentes. Em seguida, exiba
+uma lista com o nome e o salário de cada um.}
 var
-copias: integer;
-pagamento: real;
+salario: array [1..15] of real;
+nome: array [1..15] of string;
+i: integer;
 Begin
-	write ('Digite o número de cópias que serão feitas: ');
-	read (copias);
-	if (copias <=100) then
+	for i:= 1 to 15 do
 	begin
-		pagamento:= 0.25 * copias;
-		write ('O total a pagar é R$',pagamento:6:2);
-	end
-	else
-		if (copias > 100) then
-		begin
-			pagamento:= 0.20 * copias;
-			write ('O total a pagar é R$',pagamento:6:2);
-		end;
-	readkey;
-End.
+		writeln ('Digite o seu nome');
+		read (nome[i]);
+		writeln ('Digite o seu salário');
+		read (salario[i]);
+		clrscr;
+	end;
+	for i:= 1 to 15 do
+		writeln ('Funcionário: ',nome [i],' - Salário ',salario[i]:6:2);
+	readkey; 
+End.                  

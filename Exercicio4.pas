@@ -1,23 +1,18 @@
 Program EXQUATRO ;
-{Faça um programa que carregue uma matriz 2 x 2 com números reais, calcule e
-imprima a soma dos elementos da diagonal principal.}
+{Faça um software que carregue um vetor com 10 elementos e mostre na tela do
+usuário o maior valor desse vetor.}
 var
-matriz: array [1..2,1..2] of real;
-i,j: integer;
-soma: real;
+vet: array [1..10] of integer;
+i,maiorValor: integer;
 Begin
-	soma:= 0;
-	for i:= 1 to 2 do 
+	maiorValor:= -99999;
+	for i:= 1 to 10 do
 	begin
-		for j:= 1 to 2 do 
-		begin
-			writeln ('Digite o valor da linha ',i,' e coluna ',j);
-			read (matriz[i,j]);
-			if (i=j) then
-			soma:= soma + matriz [i,j];
-			clrscr;
-		end;
+		writeln ('Digite o valor do ',i,' vetor');
+		read (vet[i]);
+		if (vet[i] > maiorValor) then
+			maiorValor:= vet[i];
 	end;
-	writeln ('A soma dos elementos da diagonal principal é ',soma:6:2);
-	readkey;  
+	writeln ('O maior valor é ',maiorValor);
+	readkey;
 End.

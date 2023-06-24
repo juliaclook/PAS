@@ -1,21 +1,16 @@
 Program EXUM ;
-{Faça um programa que carregue uma matriz 4 x 2 e mostre a soma de todos os
-elementos da matriz.}
+{Faça um software que carregue um vetor de tamanho 6 e depois mostre na tela
+do usuário esse vetor.}
 var
-matriz: array [1..4,1..2] of integer;
-i,j,soma: integer;
+vet: array [1..6] of integer;
+i: integer;
 Begin
-	soma:= 0;
-	for i:= 1 to 4 do
+	for i:= 1 to 6 do
 	begin
-		for j:= 1 to 2 do
-		begin
-			writeln('Digite o valor da linha ',i,' e coluna ',j);
-			read (matriz[i,j]);
-			soma:= soma + matriz [i,j];
-			clrscr;
-		end;
+		writeln ('Digite o valor ',i,' do vetor');
+		read (vet[i]);
 	end;
-	writeln ('A soma de todos os elementos da matriz é ',soma);
+	for i:= 1 to 6 do
+		write (vet[i],' ');
 	readkey; 
 End.

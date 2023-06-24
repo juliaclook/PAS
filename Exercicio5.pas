@@ -1,25 +1,22 @@
-Program Pzim ;
+Program EXCINCO ;
+{Faça um software que carregue um vetor com 5 elementos e mostre na tela do
+usuário o maior valor desse vetor e sua posição.}
 var
-n: integer;
-res: real;
+vet: array [1..5] of integer;
+i,maiorValor,posicao: integer;
 Begin
-	textbackground(white);
-	clrscr;
-	textcolor(black);
-	write ('Digite o número: ');
-	read(n);
-	if (n >= 0) then
+	maiorValor:= -99999;
+	for i:= 1 to 5 do
 	begin
-		res:= sqrt (n);
-		delay (300);
-		write ('Sua resposta é ',res:6:2);
-	end
-	else
-	if (n < 0) then
-	begin
-		res:= sqr (n);
-		delay (3000);
-		write ('Sua resposta é ',res:6:2);
+		writeln ('Digite o valor do ',i,' vetor');
+		read (vet[i]);
+		if (vet[i] > maiorValor) then
+		begin
+			maiorValor:= vet[i];
+			posicao:= i;
+		end;
+		clrscr;
 	end;
-	readkey	  
+	writeln ('O maior valor é ',maiorValor,' e ele está em ',posicao,'º lugar');
+	readkey; 
 End.

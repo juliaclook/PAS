@@ -1,21 +1,17 @@
 Program EXDOIS ;
-{Faça um programa que carregue uma matriz 3 x 3 com números inteiros e imprima o
-maior elemento dessa matriz.}
+{Faça um software que carregue um vetor de tamanho 20 e após mostre na tela do
+usuário os valores desse vetor e a posição que ele ocupa.}
 var
-matriz: array [1..3,1..3] of integer;
-i,j,maiorE: integer;
+valor: array [1..20] of integer;
+i: integer;
 Begin
-	maiorE:= -9999;
-	for i:= 1 to 3 do
+	for i:= 1 to 20 do
 	begin
-		for j:= 1 to 3 do
-		begin
-			writeln ('Digite o valor da linha ',i,' e coluna ',j);
-			read (matriz[i,j]);
-			if (matriz[i,j] > maiorE) then
-				maiorE:= matriz[i,j];
-		end;
+		writeln ('Digite o valor ',i,' do vetor');
+		read (valor[i]);
+		clrscr;
 	end;
-	writeln ('O maior valor é ',maiorE);
+	for i:= 1 to 20 do
+		writeln ('Valor do vetor: ',valor[i],' - Posição do vetor: ',i);
 	readkey;  
 End.

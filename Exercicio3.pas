@@ -1,26 +1,16 @@
 Program EXTRES ;
-{Criar um programa que leia os elementos de uma matriz inteira 10 x 10 e escreva os
-elementos da diagonal principal.}
+{Faça um programa que carregue um vetor com 7 elementos e imprima os valores
+que estão na posição 5 e 6.}
 var
-matriz: array [1..10,1..10] of integer;
-i,j: integer; 
+vet: array [1..7] of integer;
+i: integer;
 Begin
-	for i:= 1 to 10 do
+	for i:= 1 to 7 do
 	begin
-		for j:= 1 to 10 do 
-		begin
-			writeln ('Digite o valor da linha ',i,' e coluna ',j);
-			read (matriz[i,j]);
-			clrscr;
-		end;
+		writeln ('Digite o valor do ',i,' vetor');
+		read (vet[i]);
 	end;
-	for i:= 1 to 10 do
-	begin
-		for j:= 1 to 10 do 
-		begin
-			if (i = j) then
-			writeln('Os valores da diagonal são ',matriz[i,j]);
-		end;
-	end;
+	for i:= 5 to 6 do
+		write (vet[i],' ');
 	readkey;  
 End.
